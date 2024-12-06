@@ -39,7 +39,7 @@ body {
     top: 0; /* Initial top position */
     transition: transform 3s ease, left 1s ease, top 2s ease; /* Smooth diagonal transitions */
 }
- 
+
 #resetButton {
     margin-top: 20px;
     padding: 10px 20px;
@@ -49,8 +49,23 @@ body {
 
 /* Media Query for devices with a max-width of 600px (phones) */
 @media (max-width: 600px) {
-    /* Adjust image size or layout for mobile screens */
-    .stationary-image {
-        width: 100%; /* Make the image responsive */
-        /* Other adjustments */
+    .images {
+        width: 100%; /* Make the container responsive */
+        height: auto; /* Allow height to adjust based on content */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images */
+    }
+
+    .stationary-image, .moving-image {
+        width: 80%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+        position: relative; /* Change to relative to avoid overlap */
+        margin: 10px 0; /* Add margin to separate images */
+    }
+
+    #resetButton {
+        width: 80%; /* Make the button responsive */
+        font-size: 14px; /* Adjust font size for mobile */
+    }
 }
