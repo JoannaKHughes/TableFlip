@@ -40,32 +40,33 @@ body {
     transition: transform 3s ease, left 1s ease, top 2s ease; /* Smooth diagonal transitions */
 }
 
-#resetButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+/* Default styles for larger screens */
+#buttonImage {
+    content: url('guy.jpg');
 }
 
-/* Media Query for devices with a max-width of 600px (phones) */
+#rotatingImage {
+    content: url('table.jpg');
+}
+
+/* Styles for smaller screens */
 @media (max-width: 600px) {
-    .images {
-        width: 100%; /* Make the container responsive */
-        height: auto; /* Allow height to adjust based on content */
-        display: flex; /* Use flexbox for layout */
-        flex-direction: column; /* Stack images vertically */
-        align-items: center; /* Center images */
+    #buttonImage {
+        content: url('guy-small.jpg'); /* Smaller version of the image */
     }
 
-    .stationary-image, .moving-image {
-        width: 80%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
-        position: relative; /* Change to relative to avoid overlap */
-        margin: 10px 0; /* Add margin to separate images */
+    #rotatingImage {
+        content: url('table-small.jpg'); /* Smaller version of the image */
+    }
+}
+
+/* Styles for even smaller screens */
+@media (max-width: 400px) {
+    #buttonImage {
+        content: url('guy-xsmall.jpg'); /* Extra small version of the image */
     }
 
-    #resetButton {
-        width: 80%; /* Make the button responsive */
-        font-size: 14px; /* Adjust font size for mobile */
+    #rotatingImage {
+        content: url('table-xsmall.jpg'); /* Extra small version of the image */
     }
 }
