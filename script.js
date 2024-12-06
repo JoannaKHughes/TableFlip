@@ -47,3 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
         resetImage();
     });
 });
+
+// Add the updateImages function
+function updateImages() {
+    const buttonImage = document.getElementById('buttonImage');
+    const rotatingImage = document.getElementById('rotatingImage');
+
+    if (window.innerWidth <= 400) {
+        buttonImage.src = 'guy-xsmall.jpg';
+        rotatingImage.src = 'table-xsmall.jpg';
+    } else if (window.innerWidth <= 600) {
+        buttonImage.src = 'guy-small.jpg';
+        rotatingImage.src = 'table-small.jpg';
+    } else {
+        buttonImage.src = 'guy.jpg';
+        rotatingImage.src = 'table.jpg';
+    }
+}
+
+// Call the function on page load
+window.onload = updateImages;
+
+// Call the function on window resize
+window.onresize = updateImages;
