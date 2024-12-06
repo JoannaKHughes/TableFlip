@@ -3,92 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Table</title>
-    <style>
-        /* Basic page styling */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        /* Styling the container of the table */
-        .container {
-            perspective: 1000px;
-        }
-
-        /* Styling the table */
-        table {
-            width: 300px;
-            height: 150px;
-            border-collapse: collapse;
-            background-color: #fff;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 1s;
-        }
-
-        /* Styling the individual cells */
-        td {
-            border: 1px solid #ccc;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Flip effect applied when the class is added */
-        .flip {
-            transform: rotateY(180deg);
-        }
-
-        /* Button styling */
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-    </style>
+    <title>Rotate and Fly Away</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<h1>Click Guy For Anger</h1>
     <div class="container">
-        <table id="flippingTable">
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-            </tr>
-        </table>
+        <div class="images">
+            <img src="guy.jpg" alt="Button Image" id="buttonImage" class="stationary-image">
+            <img src="table.jpg" alt="Rotating Image" id="rotatingImage" class="moving-image">
+        </div>
     </div>
+    <button id="resetButton">Reset</button>
 
-    <button onclick="flipTable()">Flip Table</button>
-
-    <script>
-        // JavaScript function to toggle the flip class on the table
-        function flipTable() {
-            const table = document.getElementById('flippingTable');
-            table.classList.toggle('flip');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
