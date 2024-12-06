@@ -6,31 +6,31 @@ const resetButton = document.getElementById('resetButton');
 rotatingImage.style.left = '100px';
 rotatingImage.style.top = '0px';
 
-// When the button is clicked (or touched on mobile devices)
-buttonImage.addEventListener('click', () => {
+// Function to handle rotation and movement
+const rotateAndMove = () => {
     rotatingImage.style.transform = 'rotate(360deg)';
     rotatingImage.style.left = '300px'; // Move to the right
     rotatingImage.style.top = '-100px'; // Move up
-});
+};
 
-// Reset the image back to its initial position when the reset button is clicked
-resetButton.addEventListener('click', () => {
+// Function to reset the image
+const resetImage = () => {
     rotatingImage.style.transform = 'rotate(0deg)';
     rotatingImage.style.left = '100px'; // Reset left position
     rotatingImage.style.top = '0px'; // Reset top position
+};
+
+// When the button is clicked (or touched on mobile devices)
+buttonImage.addEventListener('click', rotateAndMove);
+resetButton.addEventListener('click', resetImage);
+
+// Touch events for mobile optimization
+buttonImage.addEventListener('touchend', (event) => {
+    event.preventDefault(); // Prevent default touch behavior
+    rotateAndMove();
 });
 
-// Optionally, add touch events for mobile optimization (if needed)
-buttonImage.addEventListener('touchstart', (event) => {
-    // Same logic for touch events
-    rotatingImage.style.transform = 'rotate(360deg)';
-    rotatingImage.style.left = '300px';
-    rotatingImage.style.top = '-100px';
-});
-
-resetButton.addEventListener('touchstart', (event) => {
-    // Reset for touch events
-    rotatingImage.style.transform = 'rotate(0deg)';
-    rotatingImage.style.left = '100px';
-    rotatingImage.style.top = '0px';
+resetButton.addEventListener('touchend', (event) => {
+    event.preventDefault(); // Prevent default touch behavior
+    resetImage();
 });
