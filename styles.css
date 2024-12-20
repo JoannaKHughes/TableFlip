@@ -49,6 +49,67 @@ body {
     content: url('table.jpg');
 }
 
+/*Chatbot*/
+body {
+    font-family: Arial, sans-serif;
+}
+
+#chat-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+#chat-box {
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.bot-message {
+    color: blue;
+}
+
+.user-message {
+    color: green;
+    text-align: right;
+}
+
+#user-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.option-buttons {
+    margin-top: 10px;
+}
+
+.option-button {
+    padding: 8px 16px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.option-button:hover {
+    background-color: #e0e0e0;
+}
+
+
 /* Styles for smaller screens */
 @media (max-width: 600px) {
     #buttonImage {
