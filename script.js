@@ -65,6 +65,57 @@ function updateImages() {
     }
 }
 
+// Initialize the chatbot state
+let chatBox = document.getElementById("chat-box");
+
+function botMessage(message) {
+    let msgElement = document.createElement("div");
+    msgElement.classList.add("message", "bot-message");
+    msgElement.textContent = message;
+    chatBox.appendChild(msgElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function userMessage(message) {
+    let msgElement = document.createElement("div");
+    msgElement.classList.add("message", "user-message");
+    msgElement.textContent = message;
+    chatBox.appendChild(msgElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function userChoice(choice) {
+    let userMsg = '';
+    if (choice === 'option1') {
+        userMsg = 'You chose Option 1';
+        botMessage('Great choice! Option 1 is selected. Here is some information...');
+    } else if (choice === 'option2') {
+        userMsg = 'You chose Option 2';
+        botMessage('You picked Option 2. Let me tell you more about it...');
+    } else if (choice === 'option3') {
+        userMsg = 'You chose Option 3';
+        botMessage('Option 3 is selected. Here is what I know about it...');
+    }
+
+    // Display user message
+    userMessage(userMsg);
+
+    // Disable buttons after choice is made
+    disableOptions();
+}
+
+function disableOptions() {
+    let options = document.querySelectorAll(".option-button");
+    options.forEach(button => {
+        button.disabled = true;
+        button.style.backgroundColor = '#ddd';
+    });
+}
+
+// Initial bot greeting
+botMessage('Hello! I am your chatbot. Please choose an option:');
+
+
 // Call the function on page load
 window.onload = updateImages;
 
